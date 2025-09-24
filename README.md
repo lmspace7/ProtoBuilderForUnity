@@ -2,13 +2,6 @@
 
 간단한 유니티 에디터 툴로, 서버의 .proto를 동기화하고 gRPC C# 코드를 생성합니다.
 
-### 주요 기능
-- ProtoConfig 항목(여러 개) 기반으로 일괄 처리
-- 서버 .proto → 클라이언트 대상 폴더로 폴더 구조 유지 복사
-- protoc + grpc_csharp_plugin으로 C# 코드 생성
-- well-known types(google/protobuf/*.proto) 자동 include 처리
-- 인스펙터에서 폴더 선택 버튼 제공
-
 ### 요구 사항
 - Unity 2021+ 권장
 - NuGet for Unity 설치: [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity)
