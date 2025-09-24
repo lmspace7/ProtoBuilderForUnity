@@ -23,6 +23,13 @@
    - 에디터툴/ProtoBuilder/Generate Client Protos C# (동기화 → 생성 순서)
    - 또는 인스펙터 하단 유틸 버튼 사용
 
+### 메뉴 요약
+| 메뉴 | 기능 |
+| --- | --- |
+| 에디터툴/ProtoBuilder/Create Default ProtoConfig | 기본 설정 에셋 생성(중복 생성 방지) |
+| 에디터툴/ProtoBuilder/Generate Client Protos C# | 전체 동기화 후 전체 gRPC 생성 |
+
+
 
 ### 예시 프로젝트 구조
 ```text
@@ -78,12 +85,6 @@ flowchart LR
   C --> D[전체 gRPC 생성]
   D --> E[OutputCsPath로 C# 생성]
 ```
-
-### 메뉴 요약
-| 메뉴 | 기능 |
-| --- | --- |
-| 에디터툴/ProtoBuilder/Create Default ProtoConfig | 기본 설정 에셋 생성(중복 생성 방지) |
-| 에디터툴/ProtoBuilder/Generate Client Protos C# | 전체 동기화 후 전체 gRPC 생성 |
 
 ### well-known types 처리
 - 다음 경로들을 자동으로 include로 추가합니다(존재하는 것만 적용):
