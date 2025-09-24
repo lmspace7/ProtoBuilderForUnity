@@ -1,0 +1,18 @@
+{
+    "name": "ProtoBuilder",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d9c5049376f71264cb54ccf7415bba49"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

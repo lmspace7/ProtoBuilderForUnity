@@ -1,0 +1,14 @@
+{
+  "name": "com.lm.protobuilder",
+  "displayName": "LM ProtoBuilder",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description": "서버의 .proto를 동기화하고 gRPC C# 코드를 생성하는 유니티 에디터 도구입니다.",
+  "keywords": ["grpc", "protobuf", "protoc", "tool", "editor"],
+  "author": {
+    "name": "LM"
+  },
+  "license": "MIT"
+}
+
+
