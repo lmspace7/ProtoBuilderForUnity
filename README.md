@@ -11,7 +11,11 @@
 
 ### 요구 사항
 - Unity 2021+ 권장
-- NuGet for Unity로 다음 패키지 설치: Google.Protobuf, Grpc.Tools, Grpc.Net.Client, System.IO.Pipelines
+- NuGet for Unity 설치: [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity)
+  - **Google.Protobuf**
+  - **Grpc.Tools**
+  - **Grpc.Net.Client**
+  - **System.IO.Pipelines**
 
 ### 사용 방법
 1) 메뉴로 기본 설정 생성
