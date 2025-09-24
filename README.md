@@ -56,7 +56,7 @@ https://github.com/lmspace7/ProtoBuilderForUnity.git
 
 ### 3. 코드 생성 실행
 
-- `Tools > ProtoBuilder > Generate Client Protos C#` (동기화 → 생성 순서)
+- `에디터툴 > ProtoBuilder > Generate Client Protos C#` (동기화 → 생성 순서)
 - 또는 **인스펙터 하단 유틸 버튼** 사용
 
 ---
@@ -65,8 +65,8 @@ https://github.com/lmspace7/ProtoBuilderForUnity.git
 
 | 메뉴 | 기능 |
 | --- | --- |
-| `Tools > ProtoBuilder > Create Default ProtoConfig` | 기본 설정 에셋 생성(중복 생성 방지) |
-| `Tools > ProtoBuilder > Generate Client Protos C#` | 전체 동기화 후 전체 gRPC 생성 |
+| `에디터툴 > ProtoBuilder > Create Default ProtoConfig` | 기본 설정 에셋 생성(중복 생성 방지) |
+| `에디터툴 > ProtoBuilder > Generate Client Protos C#` | 전체 동기화 후 전체 gRPC 생성 |
 
 ---
 
