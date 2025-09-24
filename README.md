@@ -45,7 +45,7 @@ https://github.com/lmspace7/ProtoBuilderForUnity.git
 ## 🚀 빠른 시작
 
 ### 1. 설정 파일 생성
-`Tools > ProtoBuilder > Create Default ProtoConfig`
+`에디터툴 > ProtoBuilder > Create Default ProtoConfig`
 
 ### 2. 서버 연결 설정
 - 생성된 **ProtoConfig** 에셋 선택
