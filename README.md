@@ -23,25 +23,7 @@
    - 에디터툴/ProtoBuilder/Generate Client Protos C# (동기화 → 생성 순서)
    - 또는 인스펙터 하단 유틸 버튼 사용
 
-### 경로 규칙
-- SourcePath: 서버 .proto 루트
-- DestinationPath: 클라이언트에서 .proto를 둘 폴더 (예: Assets/Protos/Auth)
-- OutputCsPath: 생성된 C# 산출물 폴더 (예: Assets/Scripts/Packet/Auth)
 
-### well-known types 처리
-- 다음 경로들을 자동으로 include로 추가합니다(존재하는 것만 적용):
-  - Packages/Grpc.Tools.<버전>/tools/include
-  - %USERPROFILE%/.nuget/packages/grpc.tools/<버전>/build/native/include
-
-### 트러블슈팅
-- timestamp.proto not found: 위 include 경로가 실제로 존재하는지 확인하세요.
-- 게임 C#이 Auth 폴더에도 생성됨: 두 항목의 SourcePath가 동일하면 DestinationPath 둘 다로 복사됩니다. 각 서버의 고유 루트를 지정하세요.
-
-### 라이선스
-- 본 폴더의 LICENSE 파일(예: MIT)을 참조하세요.
-
-
-### 시각 자료 (예시 사용 구조)
 ### 예시 프로젝트 구조
 ```text
 Root/
@@ -79,6 +61,11 @@ Root/
 - OutputCsPath: Assets/Scripts/Packet/Game
 ```
 
+### 경로 규칙
+- SourcePath: 서버 .proto 루트
+- DestinationPath: 클라이언트에서 .proto를 둘 폴더 (예: Assets/Protos/Auth)
+- OutputCsPath: 생성된 C# 산출물 폴더 (예: Assets/Scripts/Packet/Auth)
+
 ### 실행 후 결과 예시
 - 전체 동기화: Server의 .proto가 Client/Assets/Protos 하위(Auth, Game)로 복사
 - 전체 gRPC 생성: Client/Assets/Scripts/Packet 하위(Auth, Game)에 C# 파일 생성
@@ -98,3 +85,14 @@ flowchart LR
 | 에디터툴/ProtoBuilder/Create Default ProtoConfig | 기본 설정 에셋 생성(중복 생성 방지) |
 | 에디터툴/ProtoBuilder/Generate Client Protos C# | 전체 동기화 후 전체 gRPC 생성 |
 
+### well-known types 처리
+- 다음 경로들을 자동으로 include로 추가합니다(존재하는 것만 적용):
+  - Packages/Grpc.Tools.<버전>/tools/include
+  - %USERPROFILE%/.nuget/packages/grpc.tools/<버전>/build/native/include
+
+### 트러블슈팅
+- timestamp.proto not found: 위 include 경로가 실제로 존재하는지 확인하세요.
+- 게임 C#이 Auth 폴더에도 생성됨: 두 항목의 SourcePath가 동일하면 DestinationPath 둘 다로 복사됩니다. 각 서버의 고유 루트를 지정하세요.
+
+### 라이선스
+- 본 폴더의 LICENSE 파일(예: MIT)을 참조하세요.
