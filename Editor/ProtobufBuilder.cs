@@ -13,7 +13,7 @@ namespace LM.ProtoBuilder.Editor
         [MenuItem("에디터툴/ProtoBuilder/Create Default ProtoConfig")]
         public static void Create_ProtoConfig()
         {
-            string assetDir = "Assets/Scripts/Config";
+            string assetDir = "Assets/Settings/ProtoBuilder";
             string assetPath = Path.Combine(assetDir, "ProtoConfig.asset");
 
             // 이미 존재하면 덮어쓰기 방지: 기존 에셋 선택만 수행
