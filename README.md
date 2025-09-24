@@ -1,19 +1,19 @@
-ProtoBuilder (Unity gRPC/protoc Helper)
+## ProtoBuilder (Unity gRPC/protoc Helper)
 
 간단한 유니티 에디터 툴로, 서버의 .proto를 동기화하고 gRPC C# 코드를 생성합니다.
 
-주요 기능
+### 주요 기능
 - ProtoConfig 항목(여러 개) 기반으로 일괄 처리
 - 서버 .proto → 클라이언트 대상 폴더로 폴더 구조 유지 복사
 - protoc + grpc_csharp_plugin으로 C# 코드 생성
 - well-known types(google/protobuf/*.proto) 자동 include 처리
 - 인스펙터에서 폴더 선택 버튼 제공
 
-요구 사항
+### 요구 사항
 - Unity 2021+ 권장
 - NuGet for Unity로 다음 패키지 설치: Google.Protobuf, Grpc.Tools, Grpc.Net.Client, System.IO.Pipelines
 
-사용 방법
+### 사용 방법
 1) 메뉴로 기본 설정 생성
    - 에디터툴/ProtoBuilder/Create Default ProtoConfig
 2) ProtoConfig 에셋에서 항목(이름, 원본/대상/출력 경로) 설정
@@ -23,25 +23,25 @@ ProtoBuilder (Unity gRPC/protoc Helper)
    - 에디터툴/ProtoBuilder/Generate Client Protos C# (동기화 → 생성 순서)
    - 또는 인스펙터 하단 유틸 버튼 사용
 
-경로 규칙
+### 경로 규칙
 - SourcePath: 서버 .proto 루트
 - DestinationPath: 클라이언트에서 .proto를 둘 폴더 (예: Assets/Protos/Auth)
 - OutputCsPath: 생성된 C# 산출물 폴더 (예: Assets/Scripts/Packet/Auth)
 
-well-known types 처리
+### well-known types 처리
 - 다음 경로들을 자동으로 include로 추가합니다(존재하는 것만 적용):
   - Packages/Grpc.Tools.<버전>/tools/include
   - %USERPROFILE%/.nuget/packages/grpc.tools/<버전>/build/native/include
 
-트러블슈팅
+### 트러블슈팅
 - timestamp.proto not found: 위 include 경로가 실제로 존재하는지 확인하세요.
 - 게임 C#이 Auth 폴더에도 생성됨: 두 항목의 SourcePath가 동일하면 DestinationPath 둘 다로 복사됩니다. 각 서버의 고유 루트를 지정하세요.
 
-라이선스
+### 라이선스
 - 본 폴더의 LICENSE 파일(예: MIT)을 참조하세요.
 
 
-시각 자료 (예시 사용 구조)
+### 시각 자료 (예시 사용 구조)
 ### 예시 프로젝트 구조
 ```text
 Root/
@@ -62,6 +62,9 @@ Root/
 ```
 
 ### ProtoConfig 예시 입력
+
+<img width="549" height="381" alt="Image" src="https://github.com/user-attachments/assets/7a043af9-1ab9-4fa1-8074-bade86a705e4" />
+
 ```text
 항목 1 (Auth)
 - Name: Auth
