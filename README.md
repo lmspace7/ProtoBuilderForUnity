@@ -2,33 +2,45 @@
 
 Unity에서 gRPC 서버와의 .proto 파일 동기화 및 C# 코드 생성을 자동화하는 에디터 툴입니다.
 
+## ✨ 주요 기능
+
 - **서버 .proto 파일 자동 동기화**
 - **gRPC C# 클라이언트 코드 일괄 생성**
 - **멀티 서버 환경 지원** (Auth, Game 등)
 
-## 설치
+---
+
+## 📦 설치
 
 Unity Package Manager에서 git URL 추가:
-```
+
+```text
 https://github.com/lmspace7/ProtoBuilderForUnity.git
 ```
 
-## 사전 준비
+---
+
+## 🔧 사전 준비
 
 - **protoc.exe**가 시스템 PATH에 있거나 Grpc.Tools 패키지를 통해 설치되어야 함
 - **서버측 .proto 파일**에 접근 가능한 환경
 - **서버 .proto 파일 경로**를 미리 파악해두세요
 
-## 요구 사항
+---
+
+## 📋 요구 사항
 
 - **Unity 2021+** 권장
+- **Windows 환경** (현재 Windows에서만 테스트됨 - macOS/Linux 지원 여부 미확인)
 - **NuGet for Unity** 설치: [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity)
   - **Google.Protobuf**
   - **Grpc.Tools**
   - **Grpc.Net.Client**
   - **System.IO.Pipelines**
 
-## 빠른 시작
+---
+
+## 🚀 빠른 시작
 
 ### 1. 설정 파일 생성
 `Tools > ProtoBuilder > Create Default ProtoConfig`
@@ -41,17 +53,22 @@ https://github.com/lmspace7/ProtoBuilderForUnity.git
 - 인스펙터의 **...** 버튼으로 폴더 선택 가능
 
 ### 3. 코드 생성 실행
+
 - `Tools > ProtoBuilder > Generate Client Protos C#` (동기화 → 생성 순서)
 - 또는 **인스펙터 하단 유틸 버튼** 사용
 
-## 메뉴 요약
+---
+
+## 📝 메뉴 요약
 
 | 메뉴 | 기능 |
 | --- | --- |
 | `Tools > ProtoBuilder > Create Default ProtoConfig` | 기본 설정 에셋 생성(중복 생성 방지) |
 | `Tools > ProtoBuilder > Generate Client Protos C#` | 전체 동기화 후 전체 gRPC 생성 |
 
-## 예시 프로젝트 구조
+---
+
+## 📁 예시 프로젝트 구조
 
 ```text
 Root/
@@ -71,7 +88,9 @@ Root/
       └─ Protos/              # 게임서버 .proto 원본
 ```
 
-## ProtoConfig 예시 설정
+---
+
+## ⚙️ ProtoConfig 예시 설정
 
 ![ProtoConfig Inspector](https://github.com/user-attachments/assets/7a043af9-1ab9-4fa1-8074-bade86a705e4)
 
@@ -89,18 +108,24 @@ Root/
 - OutputCsPath: Assets/Scripts/Packet/Game
 ```
 
-## 경로 규칙
+---
+
+## 📂 경로 규칙
 
 - **SourcePath**: 서버 .proto 루트
 - **DestinationPath**: 클라이언트에서 .proto를 둘 폴더 (예: `Assets/Protos/Auth`)
 - **OutputCsPath**: 생성된 C# 산출물 폴더 (예: `Assets/Scripts/Packet/Auth`)
 
-## 실행 후 결과
+---
+
+## 📊 실행 후 결과
 
 - **전체 동기화**: Server의 .proto가 `Client/Assets/Protos` 하위(Auth, Game)로 복사
 - **전체 gRPC 생성**: `Client/Assets/Scripts/Packet` 하위(Auth, Game)에 C# 파일 생성
 
-## 동작 플로우
+---
+
+## 🔄 동작 플로우
 
 ```mermaid
 flowchart LR
@@ -110,17 +135,24 @@ flowchart LR
   D --> E[OutputCsPath로 C# 생성]
 ```
 
-## well-known types 처리
+---
+
+## 📚 well-known types 처리
 
 다음 경로들을 자동으로 include로 추가합니다(존재하는 것만 적용):
 - `Packages/Grpc.Tools.<버전>/tools/include`
 - `%USERPROFILE%/.nuget/packages/grpc.tools/<버전>/build/native/include`
 
-## 트러블슈팅
+---
+
+## 🔧 트러블슈팅
 
 - **timestamp.proto not found**: 위 include 경로가 실제로 존재하는지 확인하세요.
 - **게임 C#이 Auth 폴더에도 생성됨**: 두 항목의 SourcePath가 동일하면 DestinationPath 둘 다로 복사됩니다. 각 서버의 고유 루트를 지정하세요.
+- **macOS/Linux**: 현재 Windows 환경에서만 테스트되었습니다. 다른 OS에서의 호환성은 보장되지 않습니다.
 
-## 라이선스
+---
+
+## 📄 라이선스
 
 MIT License
